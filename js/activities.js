@@ -49,7 +49,9 @@ Activities.prototype.handleConflicting = function(activity,disable){
 				document.getElementById(competingActivity.id).checked = false;
 				competingActivity.conflictCount += 1;
 			}else{
+				//remove 1 from conflict counter
 				competingActivity.conflictCount -= 1;
+				//only enable checkbox when conflict count is 0
 				if(competingActivity.conflictCount === 0){
 					document.getElementById(competingActivity.id).disabled = false;
 					
@@ -68,6 +70,12 @@ Activities.prototype.handleConflicting = function(activity,disable){
 			handleEvent();
 		}else if(competingStart < startTime && competingEnd > endTime){
 			//if competing event starts before and ends after
+			handleEvent();
+		}else if((competingStart < startTime && competingEnd < endTime) && competingEnd > startTime){
+			//if competing event starts before and ends before, while competing end is later than start time
+			handleEvent();
+		}else if((competingStart > startTime && competingEnd > endTime) && competingStart < endTime){
+			//if competing event starts after and ends after, while competing start is before end time
 			handleEvent();
 		}else{
 			continue;

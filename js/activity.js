@@ -8,6 +8,8 @@ function Activity(actName,value,price,day,start,end){
 	this.start = (typeof start === 'undefined')? '': start;
 	this.end = (typeof end === 'undefined')? '' : end;
 	this.id = this.value;
+	
+	//keeps track of how many activities this activity conflicts with
 	this.conflictCount = 0;
 }
 
@@ -104,3 +106,4 @@ Activity.prototype.toCheckBox = function(cbName){
 	return label;
 	
 }
+

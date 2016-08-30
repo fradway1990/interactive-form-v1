@@ -19,7 +19,6 @@
               
       <fieldset>         
         <legend>Basic Info</legend>
-        
         <label for="name">Name:</label>
         <input type="text" id="name" name="user_name">
         
@@ -89,7 +88,7 @@
         <label for="payment">I'm going to pay with:</label>
         <select id="payment" name="user_payment">
           <option value="select_method">Select Payment Method</option>
-          <option value="credit card">Credit Card</option>
+          <option value="credit_card">Credit Card</option>
           <option value="paypal">PayPal</option>
           <option value="bitcoin">Bitcoin</option>
         </select>
@@ -135,11 +134,11 @@
           </select> 	                  	         
         </div>
 
-        <div>
+        <div id='paypalTxt'>
         	<p>If you selected the PayPal option we'll take you to Paypal's site to set up your billing information, when you click “Register” below.</p>
         </div> 
 
-        <div>
+        <div id='bitCoinTxt'>
         	<p>If you selected the Bitcoin option we'll take you to the Coinbase site to set up your billing information. Due to the nature of exchanging Bitcoin, all Bitcoin transactions will be final.</p>
         </div>                  
 
@@ -152,6 +151,8 @@
 	</div>
 	<script src='js/activity.js'></script>
 	<script src='js/activities.js'></script>
+	<script src='js/payment.js'></script>
+	<script src='js/shirtTheme.js'></script>
 	<script src='js/script.js'></script>
 </body>
 </html>
